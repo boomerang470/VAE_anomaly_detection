@@ -71,7 +71,7 @@ def main():
     train_set = 'HDFS.log'  # set here your dataset
     train_dloader = DataLoader(train_set, args.batch_size)
 
-    val_dataset = rand_dataset()  # set here your dataset
+    val_dataset = 'HDFS.log'  # set here your dataset
     val_dloader = DataLoader(val_dataset, args.batch_size)
 
     checkpoint = ModelCheckpoint(
