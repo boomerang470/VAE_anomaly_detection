@@ -68,7 +68,7 @@ def main():
 
     model = VAEAnomalyTabular(args.input_size, args.latent_size, args.num_resamples, lr=args.lr)
 
-    train_set = rand_dataset()  # set here your dataset
+    train_set = 'HDFS.log'  # set here your dataset
     train_dloader = DataLoader(train_set, args.batch_size)
 
     val_dataset = rand_dataset()  # set here your dataset
