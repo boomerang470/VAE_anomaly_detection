@@ -58,6 +58,7 @@ dependencies = [
     "tensorboard",
     "numpy",
     "torchvision",
+    "transformers",
 ]
 
 [tool.hatch.envs.default.scripts]
@@ -73,6 +74,7 @@ dependencies = [
     "tensorboard",
     "numpy",
     "torchvision",
+    "transformers",
 ]
 
 [tool.hatch.envs.cpu.env-vars]
@@ -89,6 +91,7 @@ dependencies = [
     "numpy",
     "torchvision",
     "pytest",
+    "transformers",
 ]
 
 [tool.hatch.envs.test.overrides]
