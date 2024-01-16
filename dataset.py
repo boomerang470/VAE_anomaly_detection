@@ -44,7 +44,7 @@ def rand_dataset(num_rows=60_000, num_columns=100) -> Dataset:
     tokenized_logs = preprocess_logs(logs)
     semantic_vectors = convert_logs_to_vectors(tokenized_logs)
     semantic_vectors = torch.stack([torch.as_tensor(output.squeeze()) for output in semantic_vectors])
-    return TensorDataset(semantic_vectors)
+    return semantic_vectors
 
 
 def mnist_dataset(train=True) -> Dataset:
