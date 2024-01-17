@@ -16,13 +16,7 @@ SAVED_MODELS = ROOT / 'saved_models'
 
 
 def make_folder_run() -> Path:
-    """
-    Get the folder where to store the experiment. 
-    The folder is named with the current date and time.
-    
-    Returns:
-        Path: the path to the folder where to store the experiment
-    """
+   
     checkpoint_folder = SAVED_MODELS / datetime.now().strftime('%Y-%m-%d_%H-%M-%S')
     checkpoint_folder.makedirs_p()
     return checkpoint_folder
