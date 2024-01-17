@@ -182,11 +182,11 @@ class VAEAnomalyDetection(pl.LightningModule, ABC):
     def training_step(self, batch, batch_idx):
         x = batch
         loss = self.forward(x)
-        # if self.global_step % self.log_steps == 0:
-            # self.log('train/loss', loss['loss'])
-            # self.log('train/loss_kl', loss['kl'], prog_bar=False)
-            # self.log('train/loss_recon', loss['recon_loss'], prog_bar=False)
-            # self._log_norm()
+        if self.global_step % self.log_steps == 0:
+            self.log('train/loss', loss['loss'])
+            self.log('train/loss_kl', loss['kl'], prog_bar=False)
+            self.log('train/loss_recon', loss['recon_loss'], prog_bar=False)
+            self._log_norm()
 
         return loss
     
