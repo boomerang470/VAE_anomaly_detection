@@ -72,7 +72,7 @@ def main():
         dirpath=experiment_folder / '{epoch:02d}-{val_loss:.2f}',
         save_top_k=1,
         verbose=True,
-        monitor='val_loss',
+        monitor='val_kl',
         mode='min',
         save_last=True,
     )
