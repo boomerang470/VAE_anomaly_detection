@@ -44,7 +44,11 @@ def rand_dataset(num_rows=60_000, num_columns=100) -> Dataset:
     tokenized_logs = preprocess_logs(logs)
     semantic_vectors = convert_logs_to_vectors(tokenized_logs)
     semantic_vectors = torch.stack([torch.as_tensor(output.squeeze()) for output in semantic_vectors])
-    return semantic_vectors
+
+# Save the tensor to a file
+    torch.save(semantic_vectors, 'saved_tensor.pth')
+    loaded_tensor = torch.load('saved_tensor.pth')
+    return loaded_tensor
 
 
 def mnist_dataset(train=True) -> Dataset:
