@@ -95,8 +95,8 @@ class VAEAnomalyDetection(pl.LightningModule, ABC):
         x = batch
         loss = self.forward(x)
         self.log('val/loss_epoch', loss['loss'], on_epoch=True)
-        self.log('val/loss_kl', loss['kl'], self.global_step)
-        self.log('val/loss_recon', loss['recon_loss'], self.global_step)
+        self.log('val/loss_kl', loss['kl'], on_epoch=True)
+        self.log('val/loss_recon', loss['recon_loss'], on_epoch=True)
 
         return loss
 
